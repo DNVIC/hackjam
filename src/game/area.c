@@ -26,6 +26,8 @@
 #include "debug_box.h"
 #include "engine/colors.h"
 #include "profiling.h"
+#include "dnvic_print.h"
+
 #ifdef S2DEX_TEXT_ENGINE
 #include "s2d_engine/init.h"
 #endif
@@ -415,6 +417,8 @@ void render_game(void) {
 #endif
         do_cutscene_handler();
         print_displaying_credits_entry();
+        render_dnvic_labels();
+        render_dnvic_textures();
         gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE, 0, gBorderHeight, SCREEN_WIDTH,
                       SCREEN_HEIGHT - gBorderHeight);
         gMenuOptSelectIndex = render_menus_and_dialogs();
