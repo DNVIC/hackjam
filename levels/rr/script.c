@@ -78,9 +78,10 @@ const LevelScript level_rr_entry[] = {
 	/* Fast64 end persistent block [level commands] */
 
 	AREA(1, rr_area_1),
+		OBJECT(MODEL_GOOMBA, 184, -181, 442, 0, 0, 0, 0x00000000, bhvFloomba),
 		TERRAIN(rr_area_1_collision),
 		MACRO_OBJECTS(rr_area_1_macro_objs),
-		SET_BACKGROUND_MUSIC(0x00, SEQ_AE1_PRIMORDIAL_OOZE),
+		SET_BACKGROUND_MUSIC(0x00, SEQ_SOUND_PLAYER),
 		TERRAIN_TYPE(TERRAIN_GRASS),
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */

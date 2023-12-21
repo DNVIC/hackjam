@@ -123,6 +123,10 @@ void bhv_goomba_init(void) {
 #ifdef FLOOMBAS
     if (o->oIsFloomba) {
         o->oAnimState += FLOOMBA_ANIM_STATE_EYES_OPEN;
+        if((o->oBehParams & 0x000000FF) == 1) {
+            f32 dist;
+            o->parentObj = cur_obj_find_nearest_object_with_behavior(bhvBlueGoombaStar, &dist);
+        }
     }
 #ifdef INTRO_FLOOMBAS
     if (o->oAction == FLOOMBA_ACT_STARTUP) {
