@@ -401,7 +401,7 @@
 #define MODEL_TREASURE_CHEST_BASE         0x65        // treasure_chest_base_geo
 #define MODEL_TREASURE_CHEST_LID          0x66        // treasure_chest_lid_geo
 #define MODEL_CYAN_FISH                   0x67        // cyan_fish_geo
-#define MODEL_WATER_RING                  0x68        // water_ring_geo
+
 #define MODEL_SKEETER                     0x69        // skeeter_geo
 
 // group 14
@@ -549,6 +549,13 @@
 #define MODEL_SILVER_COIN                 0xE2        // silver_coin_geo
 #define MODEL_SILVER_COIN_NO_SHADOW       0xE3        // silver_coin_no_shadow_geo
 #endif
+
+//waterfall woods
+#define MODEL_SPOUT_FLOWER  0x100
+
+//global
+#define MODEL_LEVEL_GATE  0x180
+#define MODEL_WATER_RING                  0x181        // water_ring_geo
 
 // Menu Models (overwrites Level Geometry IDs)
 #define MODEL_MAIN_MENU_MARIO_SAVE_BUTTON         MODEL_LEVEL_GEOMETRY_03   // main_menu_geo_0001D0
