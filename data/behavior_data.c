@@ -6079,8 +6079,6 @@ const BehaviorScript bhvIntroScene[] = {
     END_LOOP(),
 };
 
-
-
 const BehaviorScript bhvSpoutFlower[] = {
     BEGIN(OBJ_LIST_GENACTOR),
     OR_INT(oFlags, (OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_COMPUTE_DIST_TO_MARIO)),
@@ -6110,5 +6108,23 @@ const BehaviorScript bhvLevelGate[] = {
     CALL_NATIVE(bhv_level_gate_init),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_level_gate_loop),
+  END_LOOP(),
+};
+
+const BehaviorScript bhvPositionFinder[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_position_finder_loop),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvNoMoneybagDupe[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_no_moneybag_dupe_loop),
     END_LOOP(),
 };

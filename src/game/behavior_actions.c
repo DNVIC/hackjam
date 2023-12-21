@@ -235,3 +235,5 @@ void set_obj_anim_with_accel_and_sound(s16 frame1, s16 frame2, s32 sound) {
 
 #include "behaviors/spout_flower.inc.c"
 #include "behaviors/level_gate.inc.c"
+#include "behaviors/position_finder.inc.c"
+#include "behaviors/no_moneybag_dupe.inc.c"
