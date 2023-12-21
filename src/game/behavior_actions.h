@@ -578,3 +578,10 @@ extern struct WaterDropletParams gShallowWaterSplashDropletParams;
 extern struct WaterDropletParams gShallowWaterWaveDropletParams;
 
 #endif // BEHAVIOR_ACTIONS_H
+
+void bhv_spout_flower_init(void);
+void bhv_spout_flower_loop(void);
+void bhv_upwards_spout_particle_init(void);
+void bhv_upwards_spout_particle_loop(void);
+void bhv_level_gate_init(void);
+void bhv_level_gate_loop(void);

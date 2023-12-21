@@ -544,3 +544,7 @@ extern const BehaviorScript bhvPositionFinder[];
 extern const BehaviorScript bhvNoMoneybagDupe[];
 
 #endif // BEHAVIOR_DATA_H
+
+extern const BehaviorScript bhvSpoutFlower[];
+extern const BehaviorScript bhvUpwardsSpoutParticle[];
+extern const BehaviorScript bhvLevelGate[];

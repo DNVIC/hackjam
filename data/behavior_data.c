@@ -6079,6 +6079,37 @@ const BehaviorScript bhvIntroScene[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvSpoutFlower[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, (OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_COMPUTE_DIST_TO_MARIO)),
+    CALL_NATIVE(bhv_spout_flower_init),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_spout_flower_loop),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvUpwardsSpoutParticle[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, (OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_COMPUTE_DIST_TO_MARIO)),
+    BILLBOARD(),
+    CALL_NATIVE(bhv_upwards_spout_particle_init),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_upwards_spout_particle_loop),
+        ADD_INT(oAnimState, 1),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvLevelGate[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_INT(oFlags, (OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_COMPUTE_DIST_TO_MARIO)),
+    LOAD_COLLISION_DATA(level_gate_collision),
+    SET_FLOAT(oDrawingDistance, 30000),
+    SET_HOME(),
+    CALL_NATIVE(bhv_level_gate_init),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_level_gate_loop),
+  END_LOOP(),
+};
 
 const BehaviorScript bhvPositionFinder[] = {
     BEGIN(OBJ_LIST_GENACTOR),
@@ -6088,6 +6119,7 @@ const BehaviorScript bhvPositionFinder[] = {
         CALL_NATIVE(bhv_position_finder_loop),
     END_LOOP(),
 };
+
 const BehaviorScript bhvNoMoneybagDupe[] = {
     BEGIN(OBJ_LIST_GENACTOR),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),

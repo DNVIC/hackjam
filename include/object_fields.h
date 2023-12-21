@@ -1213,6 +1213,7 @@
 /* Water Ring Manager (Jet Stream Ring Spawner and Manta Ray Ring Manager) */
 #define /*0x0F4*/ oWaterRingMgrNextRingIndex     OBJECT_FIELD_S32(0x1B)
 #define /*0x0F8*/ oWaterRingMgrLastRingCollected OBJECT_FIELD_S32(0x1C)
+#define /*0x0F8*/ oWaterRingTimer OBJECT_FIELD_S32(0x1D)
 
 /* Wave Trail */
 #define /*0x0F8*/ oWaveTrailSize OBJECT_FIELD_F32(0x1C)

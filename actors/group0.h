@@ -331,4 +331,13 @@ extern const Gfx white_particle_small_dl_end[];
 extern const Gfx white_particle_small_dl[];
 extern const Gfx white_particle_small_unused_dl[];
 
+// water_ring
+extern const GeoLayout water_ring_geo[];
+extern const Gfx water_ring_seg6_dl_06013AC0[];
+extern const struct Animation *const water_ring_seg6_anims_06013F7C[];
+
+#include "level_gate/geo_header.h"
+
+#include "level_gate/collision_header.h"
+
 #endif
