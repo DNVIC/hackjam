@@ -1,5 +1,8 @@
 // tuxie.inc.c
 
+u8 numBabies = 0;
+
+
 void play_penguin_walking_sound(s32 walk) {
     if (o->oSoundStateID == PENGUIN_ANIM_WALK) {
         set_obj_anim_with_accel_and_sound(
@@ -48,14 +51,13 @@ void tuxies_mother_act_receiving_baby(void) {
             if (!cur_obj_is_mario_on_platform()) {
                 s32 motherParam = GET_BPARAM2(o->oBehParams);
                 s32 babyParam   = GET_BPARAM2(o->prevObj->oBehParams);
-                s32 dialogID = ((motherParam == babyParam) ? DIALOG_058 : DIALOG_059);
+                s32 dialogID = ((numBabies) ? DIALOG_058 : DIALOG_059);
 
                 if (cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_UP, 
                         DIALOG_FLAG_TURN_TO_MARIO, CUTSCENE_DIALOG, dialogID)) {
-                    o->oSubAction = dialogID == DIALOG_058
-                        ? MOTHER_PENGUIN_SUB_ACT_CORRECT_BABY
-                        : MOTHER_PENGUIN_SUB_ACT_WRONG_BABY;
+                    o->oSubAction = MOTHER_PENGUIN_SUB_ACT_CORRECT_BABY;
                     o->prevObj->oInteractionSubtype |= INT_SUBTYPE_DROP_IMMEDIATELY;
+                    numBabies++;
                 }
             } else {
                 cur_obj_init_animation_with_sound(PENGUIN_ANIM_WALK);
@@ -63,11 +65,16 @@ void tuxies_mother_act_receiving_baby(void) {
             break;
 
         case MOTHER_PENGUIN_SUB_ACT_CORRECT_BABY:
-            if (o->prevObj->oHeldState == HELD_FREE) {
+            if (o->prevObj->oHeldState == HELD_FREE && numBabies == 2) {
                 o->prevObj->oInteractionSubtype &= ~INT_SUBTYPE_DROP_IMMEDIATELY;
                 obj_set_behavior(o->prevObj, bhvSmallPenguinReturned);
-                cur_obj_spawn_star_at_y_offset(3167.0f, -4300.0f, 5108.0f, 200.0f);
+                cur_obj_spawn_star_at_y_offset(9029.0f, 6413.0f, 517.0f, 200.0f);
                 o->oAction = MOTHER_PENGUIN_SUB_ACT_WRONG_BABY;
+            }
+            else if(o->prevObj->oHeldState == HELD_FREE) {
+                o->prevObj->oInteractionSubtype &= ~INT_SUBTYPE_DROP_IMMEDIATELY;
+                obj_set_behavior(o->prevObj, bhvPenguinBaby);
+                o->oAction = MOTHER_PENGUIN_ACT_RECEIVED_BABY;
             }
             break;
 
