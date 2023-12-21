@@ -6128,3 +6128,12 @@ const BehaviorScript bhvNoMoneybagDupe[] = {
         CALL_NATIVE(bhv_no_moneybag_dupe_loop),
     END_LOOP(),
 };
+const BehaviorScript bhvBlueGoombaStar[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    CALL_NATIVE(bhv_blue_goomba_star_init),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_blue_goomba_star_loop),
+    END_LOOP(),
+};

@@ -542,6 +542,7 @@ extern const BehaviorScript bhvIntroScene[];
 extern const BehaviorScript bhvUnusedFakeStar[];
 extern const BehaviorScript bhvPositionFinder[];
 extern const BehaviorScript bhvNoMoneybagDupe[];
+extern const BehaviorScript bhvBlueGoombaStar[];
 
 #endif // BEHAVIOR_DATA_H
 

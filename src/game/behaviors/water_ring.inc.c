@@ -218,11 +218,11 @@ void bhv_jet_stream_ring_spawner_loop(void) {
 
             if (o->oWaterRingSpawnerRingsCollected == 5) {
                 spawn_mist_particles();
-                spawn_default_star(3400.0f, -3200.0f, -500.0f);
+                spawn_default_star(17120, -520, -536);
                 o->oAction = JS_RING_SPAWNER_ACT_INACTIVE;
             }
 
-            if (o->oWaterRingTimer >= 150) {
+            if (o->oWaterRingTimer >= 45) {
                 o->oWaterRingSpawnerRingsCollected = 0;
             }
 
