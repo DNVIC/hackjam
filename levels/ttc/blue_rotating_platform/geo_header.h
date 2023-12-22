@@ -1,0 +1,9 @@
+extern const GeoLayout blue_rotating_platform_geo[];
+extern u8 blue_rotating_platform_KKIIDDZZ_DAT_2661__p00_ci4[];
+extern u8 blue_rotating_platform_KKIIDDZZ_DAT_2661__p00_pal_rgba16[];
+extern Vtx blue_rotating_platform_rotat_002_mesh_layer_1_vtx_0[35];
+extern Gfx blue_rotating_platform_rotat_002_mesh_layer_1_tri_0[];
+extern Gfx mat_blue_rotating_platform_f3dlite_material[];
+extern Gfx mat_revert_blue_rotating_platform_f3dlite_material[];
+extern Gfx blue_rotating_platform_rotat_002_mesh_layer_1[];
+extern Gfx blue_rotating_platform_material_revert_render_settings[];
