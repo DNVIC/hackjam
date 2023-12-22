@@ -28,11 +28,15 @@ const LevelScript level_pss_entry[] = {
 	LOAD_YAY0(0xa, _water_skybox_yay0SegmentRomStart, _water_skybox_yay0SegmentRomEnd), 
 	LOAD_YAY0(0x5, _group1_yay0SegmentRomStart, _group1_yay0SegmentRomEnd), 
 	LOAD_RAW(0xc, _group1_geoSegmentRomStart, _group1_geoSegmentRomEnd), 
-	LOAD_MIO0(0x6, _group14_mio0SegmentRomStart, _group14_mio0SegmentRomEnd), 
+	LOAD_YAY0(0x08, _common0_yay0SegmentRomStart, _common0_yay0SegmentRomEnd), 
+	LOAD_RAW(0x0F, _common0_geoSegmentRomStart, _common0_geoSegmentRomEnd), 
 	LOAD_RAW(0xd, _group14_geoSegmentRomStart, _group14_geoSegmentRomEnd), 
-	JUMP_LINK(script_func_global_15), 
+	LOAD_YAY0(0x6, _group14_yay0SegmentRomStart, _group14_yay0SegmentRomEnd), 
 	ALLOC_LEVEL_POOL(),
-	MARIO(MODEL_MARIO, 0x00000001, bhvMario),
+	MARIO(MODEL_MARIO, 0x00000001, bhvMario), 
+    JUMP_LINK(script_func_global_1),
+    JUMP_LINK(script_func_global_2),
+	JUMP_LINK(script_func_global_15), 
 
 	/* Fast64 begin persistent block [level commands] */
 	/* Fast64 end persistent block [level commands] */
