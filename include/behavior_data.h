@@ -546,6 +546,7 @@ extern const BehaviorScript bhvBlueGoombaStar[];
 extern const BehaviorScript bhvBlueRotatingPlatform[];
 
 extern const BehaviorScript bhvBalloon[];
+extern const BehaviorScript bhvEndingWarp[];
 
 #endif // BEHAVIOR_DATA_H
 
