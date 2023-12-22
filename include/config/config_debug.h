@@ -18,7 +18,7 @@
  * Enables a comprehensive standalone profiler. Automatically enabled by PUPPYPRINT_DEBUG.
  * If not using PUPPYPRINT_DEBUG, press L + D-Pad Up to toggle the profiler.
  */
-#define USE_PROFILER
+//#define USE_PROFILER
 
 /**
  * -- TEST LEVEL --
@@ -26,7 +26,7 @@
  * This allows you to quickly test the level you're working on.
  * If you want the game to boot normally, just comment out the define again.
  */
-#define TEST_LEVEL LEVEL_CCM
+//#define TEST_LEVEL LEVEL_CCM
 
 /**
  * Enables debug level select. Hold L while the game boots to turn it on.
@@ -36,7 +36,7 @@
 /**
  * Enables debug free move (D-pad up to enter, A to exit).
  */
-//#define ENABLE_DEBUG_FREE_MOVE
+#define ENABLE_DEBUG_FREE_MOVE
 
 /**
  * Enables a custom, enhanced performance profiler. (Enables PUPPYPRINT by default in config_safeguards).
@@ -63,7 +63,7 @@
 /**
  * Opens all courses and doors. Used for debugging purposes to unlock all content.
  */
-#define UNLOCK_ALL
+//#define UNLOCK_ALL
 
 /**
  * Same as above, but also reads all save file flags as complete.

@@ -468,8 +468,8 @@
         },
         "Low Cowbell": {
             "release_rate": 208,
-            "envelope": "envelope26",
-            "sound": "3F"
+            "envelope": "envelope2",
+            "sound": "1C"
         },
         "Charang": {
             "release_rate": 10,
