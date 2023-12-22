@@ -37,9 +37,11 @@ void water_ring_init(void) {
 
 void bhv_jet_stream_water_ring_init(void) {
     water_ring_init();
-    o->oOpacity = 70;
+    o->oOpacity = 190;
     cur_obj_init_animation(WATER_RING_ANIM_WOBBLE);
-    o->oFaceAnglePitch = 0x8000;
+    f32 dist;
+    o->parentObj = cur_obj_find_nearest_object_with_behavior(bhvJetStreamRingSpawner, &dist);
+    //o->oFaceAnglePitch = 0x8000;
 }
 
 void water_ring_check_collection(UNUSED f32 avgScale, struct Object *ringManager) {
@@ -61,8 +63,8 @@ void water_ring_check_collection(UNUSED f32 avgScale, struct Object *ringManager
         struct Object *ringSpawner = o->parentObj;
 
         if (ringSpawner) {
-            if ((o->oWaterRingIndex == ringManager->oWaterRingMgrLastRingCollected + 1)
-                || (ringSpawner->oWaterRingSpawnerRingsCollected == 0)) {
+            //if ((o->oWaterRingIndex == ringManager->oWaterRingMgrLastRingCollected + 1)
+            //    || (ringSpawner->oWaterRingSpawnerRingsCollected == 0)) {
                 ringSpawner->oWaterRingSpawnerRingsCollected++;
                 if (ringSpawner->oWaterRingSpawnerRingsCollected < 6) {
                     spawn_orange_number(ringSpawner->oWaterRingSpawnerRingsCollected, 0, -40, 0);
@@ -71,9 +73,10 @@ void water_ring_check_collection(UNUSED f32 avgScale, struct Object *ringManager
                                 gGlobalSoundSource);
                 }
                 ringManager->oWaterRingMgrLastRingCollected = o->oWaterRingIndex;
-            } else {
-                ringSpawner->oWaterRingSpawnerRingsCollected = 0;
-            }
+                ringManager->oWaterRingTimer = 0;
+            //} else {
+           //     ringSpawner->oWaterRingSpawnerRingsCollected = 0;
+           // }
         }
 
         o->oAction = WATER_RING_ACT_COLLECTED;
@@ -97,7 +100,12 @@ void water_ring_act_collected(void) {
     f32 avgScale = (f32) o->oTimer * 0.2f + o->oWaterRingAvgScale;
 
     if (o->oTimer > 20) {
-        o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
+        cur_obj_hide();
+        cur_obj_become_intangible();
+
+        if (o->parentObj->oWaterRingSpawnerRingsCollected == 0) {
+        o->oAction = 2;
+        }
     }
 
     o->oOpacity -= 10;
@@ -106,27 +114,50 @@ void water_ring_act_collected(void) {
     }
 
     water_ring_set_scale(avgScale);
+
+    
+
+}
+
+void water_ring_act_respawn(void) {
+
+    cur_obj_unhide();
+    cur_obj_become_tangible();
+    o->oInteractStatus = 0;
+
+    f32 avgScale = CLAMP(2.0f - (f32) o->oTimer * 0.2f + o->oWaterRingAvgScale, 2.0f, 10.0f);
+
+    if (o->oTimer >= 19) {
+        o->oAction = 0;
+    }
+
+    o->oOpacity += 10;
+    if (o->oOpacity > 190) {
+        o->oOpacity = 190;
+    }
+
+    water_ring_set_scale(avgScale);
 }
 
 void water_ring_act_not_collected(void) {
-    f32 avgScale = (f32) o->oTimer / 225.0f * 3.0f + 0.5f;
+    f32 avgScale = 2.0f;
 
     //! In this case ringSpawner and ringManager are the same object,
     //  because the Jet Stream Ring Spawner is its own parent object.
     struct Object *ringSpawner = o->parentObj;
 
-    if (o->oTimer > 225) {
-        o->oOpacity -= 2;
-        if (o->oOpacity < 3) {
-            o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
-        }
-    }
+    //if (o->oTimer > 225) {
+    //    o->oOpacity -= 2;
+    //    if (o->oOpacity < 3) {
+    //        o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
+    //    }
+    //}
 
     water_ring_check_collection(avgScale, ringSpawner);
     water_ring_set_scale(avgScale);
 
-    o->oPosY += 10.0f;
-    o->oFaceAngleYaw += 0x100;
+    //o->oPosY += 10.0f;
+    //o->oFaceAngleYaw += 0x100;
     set_object_visibility(o, 5000);
 
     if (ringSpawner->oWaterRingSpawnerRingsCollected == 4
@@ -146,6 +177,10 @@ void bhv_jet_stream_water_ring_loop(void) {
         case WATER_RING_ACT_COLLECTED:
             water_ring_act_collected();
             break;
+
+        case 2:
+            water_ring_act_respawn();
+        break;
     }
 }
 
@@ -179,13 +214,19 @@ void water_ring_spawner_act_inactive(void) {
 void bhv_jet_stream_ring_spawner_loop(void) {
     switch (o->oAction) {
         case JS_RING_SPAWNER_ACT_ACTIVE:
-            water_ring_spawner_act_inactive();
+            //water_ring_spawner_act_inactive();
 
             if (o->oWaterRingSpawnerRingsCollected == 5) {
                 spawn_mist_particles();
-                spawn_default_star(3400.0f, -3200.0f, -500.0f);
+                spawn_default_star(17120, -520, -536);
                 o->oAction = JS_RING_SPAWNER_ACT_INACTIVE;
             }
+
+            if (o->oWaterRingTimer >= 45) {
+                o->oWaterRingSpawnerRingsCollected = 0;
+            }
+
+            o->oWaterRingTimer++;
             break;
 
         case JS_RING_SPAWNER_ACT_INACTIVE:

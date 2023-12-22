@@ -232,4 +232,13 @@ void set_obj_anim_with_accel_and_sound(s16 frame1, s16 frame2, s32 sound) {
 #include "behaviors/strong_wind_particle.inc.c"
 #include "behaviors/sl_snowman_wind.inc.c"
 #include "behaviors/sl_walking_penguin.inc.c"
+
 #include "behaviors/aa_hyena_objects.inc.c"
+
+#include "behaviors/spout_flower.inc.c"
+#include "behaviors/level_gate.inc.c"
+#include "behaviors/position_finder.inc.c"
+#include "behaviors/no_moneybag_dupe.inc.c"
+#include "behaviors/blue_goomba_star.inc.c"
+#include "behaviors/blue_rotating_platform.inc.c"
+

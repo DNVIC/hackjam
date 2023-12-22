@@ -95,9 +95,6 @@ extern const Gfx water_mine_seg6_dl_0600D268[];
 extern const Gfx water_mine_seg6_dl_0600D2E0[];
 extern const Gfx water_mine_seg6_dl_0600D3F8[];
 
-// water_ring
-extern const GeoLayout water_ring_geo[];
-extern const Gfx water_ring_seg6_dl_06013AC0[];
-extern const struct Animation *const water_ring_seg6_anims_06013F7C[];
+
 
 #endif

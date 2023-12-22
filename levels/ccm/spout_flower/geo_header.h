@@ -1,0 +1,16 @@
+extern const GeoLayout spout_flower_geo[];
+extern Lights1 spout_flower_f3dlite_material_006_lights;
+extern Lights1 spout_flower_f3dlite_material_008_lights;
+extern Lights1 spout_flower_f3dlite_material_007_lights;
+extern Vtx spout_flower_Circle_001_mesh_layer_1_vtx_cull[8];
+extern Vtx spout_flower_Circle_001_mesh_layer_1_vtx_0[28];
+extern Gfx spout_flower_Circle_001_mesh_layer_1_tri_0[];
+extern Vtx spout_flower_Circle_001_mesh_layer_1_vtx_1[7];
+extern Gfx spout_flower_Circle_001_mesh_layer_1_tri_1[];
+extern Vtx spout_flower_Circle_001_mesh_layer_1_vtx_2[32];
+extern Gfx spout_flower_Circle_001_mesh_layer_1_tri_2[];
+extern Gfx mat_spout_flower_f3dlite_material_006[];
+extern Gfx mat_spout_flower_f3dlite_material_008[];
+extern Gfx mat_spout_flower_f3dlite_material_007[];
+extern Gfx spout_flower_Circle_001_mesh_layer_1[];
+extern Gfx spout_flower_material_revert_render_settings[];

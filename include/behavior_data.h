@@ -540,7 +540,15 @@ extern const BehaviorScript bhvEndBirds1[];
 extern const BehaviorScript bhvEndBirds2[];
 extern const BehaviorScript bhvIntroScene[];
 extern const BehaviorScript bhvUnusedFakeStar[];
+extern const BehaviorScript bhvPositionFinder[];
+extern const BehaviorScript bhvNoMoneybagDupe[];
+extern const BehaviorScript bhvBlueGoombaStar[];
+extern const BehaviorScript bhvBlueRotatingPlatform[];
 
 extern const BehaviorScript bhvBalloon[];
 
 #endif // BEHAVIOR_DATA_H
+
+extern const BehaviorScript bhvSpoutFlower[];
+extern const BehaviorScript bhvUpwardsSpoutParticle[];
+extern const BehaviorScript bhvLevelGate[];

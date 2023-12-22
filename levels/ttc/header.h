@@ -65,4 +65,11 @@ extern const Gfx ttc_dl_surface_treadmill[];
 // script
 extern const LevelScript level_ttc_entry[];
 
+
+#include "levels/ttc/header.inc.h"
+
+#include "levels/ttc/blue_rotating_platform/collision_header.h"
+
+#include "levels/ttc/blue_rotating_platform/geo_header.h"
+
 #endif

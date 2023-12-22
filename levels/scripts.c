@@ -112,6 +112,8 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_DIRT_ANIMATION,          dirt_animation_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CARTOON_STAR,            cartoon_star_geo),
     LOAD_MODEL_FROM_GEO(MODEL_BALLOON,                 balloon_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_LEVEL_GATE,              level_gate_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_WATER_RING,              water_ring_geo),
 #ifdef IA8_30FPS_COINS
     LOAD_MODEL_FROM_GEO(MODEL_SILVER_COIN,             silver_coin_geo),
     LOAD_MODEL_FROM_GEO(MODEL_SILVER_COIN_NO_SHADOW,   silver_coin_no_shadow_geo),
@@ -311,7 +313,7 @@ const LevelScript script_func_global_14[] = {
     LOAD_MODEL_FROM_GEO(MODEL_TREASURE_CHEST_BASE,     treasure_chest_base_geo),
     LOAD_MODEL_FROM_GEO(MODEL_TREASURE_CHEST_LID,      treasure_chest_lid_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CYAN_FISH,               cyan_fish_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_WATER_RING,              water_ring_geo),
+    
     LOAD_MODEL_FROM_GEO(MODEL_WATER_MINE,              water_mine_geo),
     LOAD_MODEL_FROM_GEO(MODEL_SEAWEED,                 seaweed_geo),
     LOAD_MODEL_FROM_GEO(MODEL_SKEETER,                 skeeter_geo),

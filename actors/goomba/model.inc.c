@@ -882,8 +882,8 @@ const Gfx goomba_seg8_dl_0801D0D0[] = {
 
 // 0x0801D360 - 0x0801D760
 const Gfx goomba_seg8_dl_0801D360[] = {
-    gsSPLightColor(LIGHT_1, 0xdeb44eff),
-    gsSPLightColor(LIGHT_2, 0x372d13ff),
+    gsSPLightColor(LIGHT_1, 0x0098d6ff),
+    gsSPLightColor(LIGHT_2, 0x002533ff),
     gsSPVertex(goomba_seg8_vertex_0801C620, 16, 0),
     gsSP2Triangles( 0,  1,  2, 0x0,  0,  2,  3, 0x0),
     gsSP2Triangles( 4,  5,  1, 0x0,  4,  1,  0, 0x0),

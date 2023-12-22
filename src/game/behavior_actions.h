@@ -550,6 +550,12 @@ void bhv_intro_scene_loop(void);
 void bhv_dust_smoke_loop(void);
 void bhv_yoshi_loop(void);
 void bhv_volcano_trap_loop(void);
+void bhv_position_finder_loop(void);
+void bhv_no_moneybag_dupe_loop(void);
+void bhv_blue_goomba_star_init(void);
+void bhv_blue_goomba_star_loop(void);
+void bhv_blue_rotating_platform_loop(void);
+void bhv_blue_rotating_platform_init(void);
 
 void bhv_balloon(void);
 
@@ -578,3 +584,10 @@ extern struct WaterDropletParams gShallowWaterSplashDropletParams;
 extern struct WaterDropletParams gShallowWaterWaveDropletParams;
 
 #endif // BEHAVIOR_ACTIONS_H
+
+void bhv_spout_flower_init(void);
+void bhv_spout_flower_loop(void);
+void bhv_upwards_spout_particle_init(void);
+void bhv_upwards_spout_particle_loop(void);
+void bhv_level_gate_init(void);
+void bhv_level_gate_loop(void);

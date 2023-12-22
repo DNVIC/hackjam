@@ -44,3 +44,8 @@
 #include "levels/ttc/spinner/collision.inc.c"
 #include "levels/ttc/areas/1/macro.inc.c"
 #include "levels/ttc/areas/1/movtext.inc.c"
+
+#include "levels/ttc/leveldata.inc.c"
+
+#include "levels/ttc/blue_rotating_platform/collision.inc.c"
+#include "levels/ttc/blue_rotating_platform/model.inc.c"
