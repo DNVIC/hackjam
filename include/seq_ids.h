@@ -46,6 +46,8 @@ enum SeqId {
     SEQ_MENU_FILE_SELECT,             // 0x21
     SEQ_EVENT_CUTSCENE_LAKITU,        // 0x22 (not in JP)
     SEQ_STREAMED_WATERFALL_WOOD,
+    SEQ_AE1_HOT_SPRINGS,              // 0x23
+    SEQ_AE1_PRIMORDIAL_OOZE,
     SEQ_COUNT
 };
 
