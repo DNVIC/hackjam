@@ -48,6 +48,10 @@ const LevelScript level_wmotr_entry[] = {
 	/* Fast64 end persistent block [level commands] */
 
 	AREA(1, wmotr_area_1),
+		WARP_NODE(0x0A, LEVEL_WMOTR, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF0, LEVEL_WMOTR, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF1, LEVEL_WMOTR, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		WARP_NODE(0x05, LEVEL_TTC, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		OBJECT(MODEL_NONE, 1412, -24, 7407, 0, 0, 0, (2 << 16), bhvCoinFormation),
 		OBJECT(MODEL_NONE, 11718, -1860, -860, 0, 90, 0, 0x00100000, bhvCoinFormation),
 		OBJECT(MODEL_NONE, 7675, 5750, 530, 0, 90, 0, 0x00000000, bhvCoinFormation),
@@ -105,6 +109,8 @@ const LevelScript level_wmotr_entry[] = {
 		OBJECT(MODEL_WATER_RING, 16336, 2419, -547, 0, 0, 180, (5 << 24), bhvJetStreamWaterRing),
 		OBJECT(MODEL_WATER_RING, 16358, 389, -547, 0, 0, 180, (5 << 24), bhvJetStreamWaterRing),
 		OBJECT(MODEL_STAR, 12718, -1770, -941, 0, 0, 0, (1 << 24) | (0 << 16), bhvStar),
+		OBJECT(MODEL_NONE, 20870, -832, 2074, 0, 0, 0, (55 << 24) | (5 << 16), bhvWarp),
+		OBJECT(MODEL_NONE, 10555, 5751, -1, 0, 0, 0, 0x00000000, bhvSpinAirborneWarp),
 		TERRAIN(wmotr_area_1_collision),
 		MACRO_OBJECTS(wmotr_area_1_macro_objs),
 		SET_BACKGROUND_MUSIC(0x00, SEQ_AE1_HOT_SPRINGS),

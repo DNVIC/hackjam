@@ -34,8 +34,8 @@ const LevelScript level_pss_entry[] = {
 	LOAD_YAY0(0x6, _group14_yay0SegmentRomStart, _group14_yay0SegmentRomEnd), 
 	ALLOC_LEVEL_POOL(),
 	MARIO(MODEL_MARIO, 0x00000001, bhvMario), 
-    JUMP_LINK(script_func_global_1),
-    JUMP_LINK(script_func_global_2),
+	JUMP_LINK(script_func_global_1), 
+	JUMP_LINK(script_func_global_2), 
 	JUMP_LINK(script_func_global_15), 
 
 	/* Fast64 begin persistent block [level commands] */

@@ -52,7 +52,7 @@ const LevelScript level_bob_entry[] = {
 		WARP_NODE(0x05, LEVEL_RR, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		OBJECT(MODEL_LEVEL_GATE, -1922, -541, 346, 0, 0, 0, (1 << 16), bhvLevelGate),
 		OBJECT(MODEL_STAR, -1977, 0, -846, 0, 0, 0, 0x00000000, bhvStar),
-		OBJECT(MODEL_NONE, -1922, -814, 346, 0, 0, 0, (5 << 16), bhvWarp),
+		OBJECT(MODEL_NONE, -1922, -814, 346, 0, 0, 0, (55 << 24) | (5 << 16), bhvWarp),
 		TERRAIN(bob_area_1_collision),
 		MACRO_OBJECTS(bob_area_1_macro_objs),
 		STOP_MUSIC(0),

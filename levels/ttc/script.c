@@ -46,6 +46,9 @@ const LevelScript level_ttc_entry[] = {
 	/* Fast64 end persistent block [level commands] */
 
 	AREA(1, ttc_area_1),
+		WARP_NODE(0x0A, LEVEL_RR, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF0, LEVEL_RR, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF1, LEVEL_RR, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		OBJECT(MODEL_BLUE_ROTATING_PLATFORM, 0, -1374, 3654, 0, 0, 0, (85 << 24) | (182 << 16) | (7 << 8) | (128), bhvBlueRotatingPlatform),
 		OBJECT(MODEL_BLUE_ROTATING_PLATFORM, 0, -1374, 3654, 0, 0, 0, (0 << 24) | (0 << 16) | (7 << 8) | (180), bhvBlueRotatingPlatform),
 		OBJECT(MODEL_BLUE_ROTATING_PLATFORM, 0, -1374, 7193, 0, 0, 0, (85 << 24) | (54 << 16) | (7 << 8) | (128), bhvBlueRotatingPlatform),
@@ -80,7 +83,7 @@ const LevelScript level_ttc_entry[] = {
 		OBJECT(MODEL_STAR, -10770, -2202, -8104, 0, -180, 0, (4 << 24), bhvStar),
 		OBJECT(MODEL_STAR, 0, -669, -16650, 0, -180, 0, (5 << 24), bhvStar),
 		OBJECT(MODEL_NONE, 6133, 814, 5499, 0, -60, 0, (0 << 24) | (17 << 16) | (0 << 8) | (0), bhvCoinFormation),
-		OBJECT(MODEL_NONE, 0, -724, 13561, 0, 0, 0, (10 << 16), bhvSpinAirborneWarp),
+		OBJECT(MODEL_NONE, 0, -724, -19844, 0, 0, 0, (10 << 16), bhvSpinAirborneWarp),
 		TERRAIN(ttc_area_1_collision),
 		MACRO_OBJECTS(ttc_area_1_macro_objs),
 		SET_BACKGROUND_MUSIC(0x00, SEQ_AE1_SUSHI_TEMPLE),
