@@ -6080,3 +6080,10 @@ const BehaviorScript bhvIntroScene[] = {
 };
 
 
+const BehaviorScript bhvBalloon[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_balloon),
+    END_LOOP(),
+};
