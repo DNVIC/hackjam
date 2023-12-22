@@ -1015,6 +1015,21 @@ s32 play_mode_normal(void) {
     }
 #endif
 
+    if (gCurrLevelNum == LEVEL_WF){
+        switch (gCurrAreaIndex)
+        {
+        case 1:
+            gMarioStates->pos[0] = -4000.0f;
+            break;
+
+        case 2:
+            gMarioStates->pos[0] = 4000.0f;
+            break;
+        
+        default:
+            break;
+        }
+    }
     warp_area();
     check_instant_warp();
 

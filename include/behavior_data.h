@@ -545,6 +545,8 @@ extern const BehaviorScript bhvNoMoneybagDupe[];
 extern const BehaviorScript bhvBlueGoombaStar[];
 extern const BehaviorScript bhvBlueRotatingPlatform[];
 
+extern const BehaviorScript bhvBalloon[];
+
 #endif // BEHAVIOR_DATA_H
 
 extern const BehaviorScript bhvSpoutFlower[];
