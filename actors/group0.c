@@ -35,5 +35,6 @@
 #include FONT_C_FILE
 #endif
 
+#include "balloon/model.inc.c"
 #include "level_gate/model.inc.c"
 #include "level_gate/collision.inc.c"

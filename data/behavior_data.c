@@ -6099,6 +6099,13 @@ const BehaviorScript bhvUpwardsSpoutParticle[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvBalloon[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_balloon),
+    END_LOOP(),
+};
 const BehaviorScript bhvLevelGate[] = {
     BEGIN(OBJ_LIST_SURFACE),
     OR_INT(oFlags, (OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_COMPUTE_DIST_TO_MARIO)),

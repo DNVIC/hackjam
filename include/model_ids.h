@@ -488,7 +488,7 @@
 #define MODEL_BUBBLE                      0xA8        // bubble_geo
 // find me
 #define MODEL_PURPLE_MARBLE               0xAA        // purple_marble_geo
-// find me
+#define MODEL_BALLOON                     0xAB        // balloon_geo
 #define MODEL_UNKNOWN_AC                  0xAC        // according to an special preset, it was the original id of the castle floor trap
 #define MODEL_WF_SLIDING_PLATFORM         0xAD        // wf_geo_000A98
 #define MODEL_WF_SMALL_BOMP               0xAE        // wf_geo_000A00

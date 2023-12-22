@@ -1158,6 +1158,25 @@ void mode_8_directions_camera(struct Camera *c) {
     set_camera_height(c, pos[1]);
 }
 
+/* 2d area camera*/
+void mode_2d_camera(struct Camera *c) {
+    Vec3f pos;
+    s16 oldAreaYaw = sAreaYaw;
+
+    radial_camera_input(c);
+
+    s8DirModeYawOffset = 0x4000;
+
+    //lakitu_zoom(700.f, 0x600);
+    sLakituDist = 700.0f;
+    sLakituPitch = 0x600;
+    c->nextYaw = update_8_directions_camera(c, c->focus, pos);
+    c->pos[0] = pos[0];
+    c->pos[2] = pos[2];
+    sAreaYawChange = sAreaYaw - oldAreaYaw;
+    set_camera_height(c, pos[1]);
+}
+
 /**
  * Updates the camera in outward radial mode.
  * sModeOffsetYaw is calculated in radial_camera_move, which calls offset_yaw_outward_radial
@@ -2986,6 +3005,10 @@ void update_camera(struct Camera *c) {
 
                 case CAMERA_MODE_8_DIRECTIONS:
                     mode_8_directions_camera(c);
+                    break;
+                
+                case CAMERA_MODE_2D:
+                    mode_2d_camera(c);
                     break;
 
                 case CAMERA_MODE_RADIAL:
@@ -6054,6 +6077,10 @@ struct CameraTrigger sCamBBH[] = {
  *
  * Each table is terminated with NULL_TRIGGER
  */
+
+struct CameraTrigger sCamWF[] = {
+  NULL_TRIGGER
+};
 struct CameraTrigger sCamWMOtR[] = {
 	NULL_TRIGGER
 };
@@ -10407,7 +10434,7 @@ u8 sZoomOutAreaMasks[] = {
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // VCUTM          | BITFS
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // SA             | BITS
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 0, 0, 0, 0), // LLL            | DDD
-	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 0, 0, 0, 0), // WF             | ENDING
+	ZOOMOUT_AREA_MASK(1, 1, 1, 0, 0, 0, 0, 0), // WF             | ENDING
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 0, 0, 0, 0), // COURTYARD      | PSS
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // COTMC          | TOTWC
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 0, 0, 0), // BOWSER_1       | WMOTR
