@@ -13,8 +13,13 @@
 #endif
 
 
+#include "src/game/texscroll/ccm_texscroll.inc.c"
 #include "src/game/texscroll/wmotr_texscroll.inc.c"
 void scroll_textures() {
+	if(SCROLL_CONDITION(sSegmentROMTable[0x7] == (uintptr_t)_ccm_segment_7SegmentRomStart)) {
+		scroll_textures_ccm();
+	}
+
 	if(SCROLL_CONDITION(sSegmentROMTable[0x7] == (uintptr_t)_wmotr_segment_7SegmentRomStart)) {
 		scroll_textures_wmotr();
 	}
