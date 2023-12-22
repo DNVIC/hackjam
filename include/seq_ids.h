@@ -48,6 +48,7 @@ enum SeqId {
     SEQ_AE1_HOT_SPRINGS,              // 0x23
     SEQ_AE1_PRIMORDIAL_OOZE,          // 0x24
     SEQ_STREAMED_WATERFALL_WOOD,      // 0x25
+    SEQ_AE1_SUSHI_TEMPLE,
     SEQ_COUNT
 };
 
