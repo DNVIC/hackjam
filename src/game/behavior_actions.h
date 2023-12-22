@@ -554,6 +554,8 @@ void bhv_position_finder_loop(void);
 void bhv_no_moneybag_dupe_loop(void);
 void bhv_blue_goomba_star_init(void);
 void bhv_blue_goomba_star_loop(void);
+void bhv_blue_rotating_platform_loop(void);
+void bhv_blue_rotating_platform_init(void);
 
 Gfx *geo_move_mario_part_from_parent(s32 callContext, UNUSED struct GraphNode *node, Mat4 mtx);
 

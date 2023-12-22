@@ -553,6 +553,8 @@
 //waterfall woods
 #define MODEL_SPOUT_FLOWER  0x100
 
+#define MODEL_BLUE_ROTATING_PLATFORM 0x100
+
 //global
 #define MODEL_LEVEL_GATE  0x180
 #define MODEL_WATER_RING                  0x181        // water_ring_geo

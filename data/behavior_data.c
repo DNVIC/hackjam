@@ -6137,3 +6137,16 @@ const BehaviorScript bhvBlueGoombaStar[] = {
         CALL_NATIVE(bhv_blue_goomba_star_loop),
     END_LOOP(),
 };
+const BehaviorScript bhvBlueRotatingPlatform[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    LOAD_COLLISION_DATA(blue_rotating_platform_collision),
+    SET_FLOAT(oCollisionDistance, 2500),
+    SET_FLOAT(oDrawingDistance, 10000),
+    CALL_NATIVE(bhv_blue_rotating_platform_init),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_blue_rotating_platform_loop),
+        CALL_NATIVE(load_object_collision_model),
+    END_LOOP(),
+};

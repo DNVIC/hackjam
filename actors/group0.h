@@ -340,4 +340,5 @@ extern const struct Animation *const water_ring_seg6_anims_06013F7C[];
 
 #include "level_gate/collision_header.h"
 
+
 #endif
