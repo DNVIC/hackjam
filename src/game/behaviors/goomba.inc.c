@@ -19,6 +19,17 @@ static struct ObjectHitbox sGoombaHitbox = {
     /* hurtboxRadius:     */ 42,
     /* hurtboxHeight:     */ 40,
 };
+static struct ObjectHitbox sBlueGoombaHitbox = {
+    /* interactType:      */ INTERACT_BOUNCE_TOP,
+    /* downOffset:        */ 0,
+    /* damageOrCoinValue: */ 1,
+    /* health:            */ 0,
+    /* numLootCoins:      */ 5,
+    /* radius:            */ 72,
+    /* height:            */ 50,
+    /* hurtboxRadius:     */ 42,
+    /* hurtboxHeight:     */ 40,
+};
 
 /**
  * Properties that vary based on goomba size.
@@ -122,11 +133,7 @@ void bhv_goomba_init(void) {
 
 #ifdef FLOOMBAS
     if (o->oIsFloomba) {
-        o->oAnimState += FLOOMBA_ANIM_STATE_EYES_OPEN;
-        if((o->oBehParams & 0x000000FF) == 1) {
-            f32 dist;
-            o->parentObj = cur_obj_find_nearest_object_with_behavior(bhvBlueGoombaStar, &dist);
-        }
+        o->oNumLootCoins = -1;
     }
 #ifdef INTRO_FLOOMBAS
     if (o->oAction == FLOOMBA_ACT_STARTUP) {
@@ -365,6 +372,20 @@ void bhv_goomba_update(void) {
         if (obj_handle_attacks(&sGoombaHitbox, GOOMBA_ACT_ATTACKED_MARIO,
                                sGoombaAttackHandlers[o->oGoombaSize & 0x1])
                                && (o->oAction != GOOMBA_ACT_ATTACKED_MARIO)) {
+            
+            
+            if(o->oIsFloomba && ((o->oBehParams & 0x000000FF) == 1)) {
+                f32 dist;
+                struct Object *star_spawner = cur_obj_find_nearest_object_with_behavior(bhvBlueGoombaStar, &dist);
+                star_spawner->oF4++;
+                    
+                if (star_spawner->oF4 < 6) {
+                    spawn_orange_number(star_spawner->oF4, 0, -40, 0);
+                    play_sound(SOUND_MENU_COLLECT_SECRET
+                                + (((u8) star_spawner->oF4 - 1) << 16),
+                                gGlobalSoundSource);
+                }
+            }
             mark_goomba_as_dead();
         }
 
