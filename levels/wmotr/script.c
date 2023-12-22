@@ -110,7 +110,7 @@ const LevelScript level_wmotr_entry[] = {
 		OBJECT(MODEL_WATER_RING, 16358, 389, -547, 0, 0, 180, (5 << 24), bhvJetStreamWaterRing),
 		OBJECT(MODEL_STAR, 12718, -1770, -941, 0, 0, 0, (1 << 24) | (0 << 16), bhvStar),
 		OBJECT(MODEL_NONE, 20870, -832, 2074, 0, 0, 0, (55 << 24) | (5 << 16), bhvWarp),
-		OBJECT(MODEL_NONE, 10555, 5751, -1, 0, 0, 0, 0x00000000, bhvSpinAirborneWarp),
+		OBJECT(MODEL_NONE, -11, 610, -818, 0, 0, 0, (10 << 16), bhvSpinAirborneWarp),
 		TERRAIN(wmotr_area_1_collision),
 		MACRO_OBJECTS(wmotr_area_1_macro_objs),
 		SET_BACKGROUND_MUSIC(0x00, SEQ_AE1_HOT_SPRINGS),

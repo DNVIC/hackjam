@@ -47,8 +47,8 @@ const LevelScript level_ttc_entry[] = {
 
 	AREA(1, ttc_area_1),
 		WARP_NODE(0x0A, LEVEL_RR, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		WARP_NODE(0xF0, LEVEL_RR, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		WARP_NODE(0xF1, LEVEL_RR, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF0, LEVEL_TTC, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF1, LEVEL_TTC, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		OBJECT(MODEL_BLUE_ROTATING_PLATFORM, 0, -1374, 3654, 0, 0, 0, (85 << 24) | (182 << 16) | (7 << 8) | (128), bhvBlueRotatingPlatform),
 		OBJECT(MODEL_BLUE_ROTATING_PLATFORM, 0, -1374, 3654, 0, 0, 0, (0 << 24) | (0 << 16) | (7 << 8) | (180), bhvBlueRotatingPlatform),
 		OBJECT(MODEL_BLUE_ROTATING_PLATFORM, 0, -1374, 7193, 0, 0, 0, (85 << 24) | (54 << 16) | (7 << 8) | (128), bhvBlueRotatingPlatform),
@@ -74,12 +74,12 @@ const LevelScript level_ttc_entry[] = {
 		OBJECT(MODEL_LEVEL_GATE, 0, -1111, -135, 90, 0, 0, (3 << 16), bhvLevelGate),
 		OBJECT(MODEL_LEVEL_GATE, 0, -1111, -14603, 90, 0, 0, (1 << 16), bhvLevelGate),
 		OBJECT(MODEL_LEVEL_GATE, 0, -1111, 11493, 90, 0, 0, (6 << 16), bhvLevelGate),
-		OBJECT(MODEL_WHOMP, 0, -1356, 16745, 0, -180, 0, 0x00000000, bhvWhompKingBoss),
+		OBJECT(MODEL_WHOMP, 0, -1356, 16745, 0, -180, 0, (6 << 24), bhvWhompKingBoss),
 		OBJECT(MODEL_NONE, 0, -433, 14809, 0, 0, 0, 0x00000000, bhvEndingWarp),
 		OBJECT(MODEL_STAR, -3691, 1016, 5395, 0, 0, 0, 0x00000000, bhvStar),
 		OBJECT(MODEL_STAR, 9316, 1016, 7584, 0, 0, 0, (1 << 24), bhvStar),
 		OBJECT(MODEL_STAR, -3602, 5666, 10759, 0, 0, 0, (2 << 24), bhvStar),
-		OBJECT(MODEL_STAR, 8236, -802, -8104, 0, 0, 0, (3 << 16), bhvStar),
+		OBJECT(MODEL_STAR, 8236, -802, -8104, 0, 0, 0, (3 << 24) | (0 << 16), bhvStar),
 		OBJECT(MODEL_STAR, -10770, -2202, -8104, 0, -180, 0, (4 << 24), bhvStar),
 		OBJECT(MODEL_STAR, 0, -669, -16650, 0, -180, 0, (5 << 24), bhvStar),
 		OBJECT(MODEL_NONE, 6133, 814, 5499, 0, -60, 0, (0 << 24) | (17 << 16) | (0 << 8) | (0), bhvCoinFormation),
@@ -87,6 +87,7 @@ const LevelScript level_ttc_entry[] = {
 		TERRAIN(ttc_area_1_collision),
 		MACRO_OBJECTS(ttc_area_1_macro_objs),
 		SET_BACKGROUND_MUSIC(0x00, SEQ_AE1_SUSHI_TEMPLE),
+		SHOW_DIALOG(0x00, DIALOG_000),
 		TERRAIN_TYPE(TERRAIN_STONE),
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */
