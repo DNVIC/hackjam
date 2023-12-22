@@ -1,3 +1,6 @@
+Lights1 ccm_dl_f3dlite_material_013_lights = gdSPDefLights1(
+	0x0, 0x0, 0x0,
+	0x0, 0x0, 0x0, 0x28, 0x28, 0x28);
 
 Gfx ccm_dl_mossoverlay_rgba16_aligner[] = {gsSPEndDisplayList()};
 u8 ccm_dl_mossoverlay_rgba16[] = {
@@ -14061,8 +14064,7 @@ Gfx mat_ccm_dl_f3dlite_material_013[] = {
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-    gsSPLightColor(LIGHT_1, 0xff),
-    gsSPLightColor(LIGHT_2, 0xff),
+	gsSPSetLights1(ccm_dl_f3dlite_material_013_lights),
 	gsSPEndDisplayList(),
 };
 
