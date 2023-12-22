@@ -49,6 +49,7 @@ enum SeqId {
     SEQ_AE1_PRIMORDIAL_OOZE,          // 0x24
     SEQ_STREAMED_WATERFALL_WOOD,      // 0x25
     SEQ_AE1_SUSHI_TEMPLE,
+    SEQ_EQUINOX_ATLENA,
     SEQ_COUNT
 };
 
